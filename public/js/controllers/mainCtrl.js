@@ -3,7 +3,7 @@
 var app = angular.module('MyApp');
 
 app.controller('mainCtrl', function($scope, $http) {
-  $scope.formData = {};
+  $scope.newTodo = {};
 
   $http.get('/todos')
     .success(function(data) {
@@ -14,10 +14,10 @@ app.controller('mainCtrl', function($scope, $http) {
       console.log('Error: ' + data);
     });
 
-  $scope.createTodo = function() {
-    $http.post('/todos', $scope.formData)
+  $scope.addTodo = function() {
+    $http.post('/todos', $scope.newTodo)
       .success(function(data) {
-        $scope.formData = {};
+        $scope.newTodo = {};
         $scope.todos = data;
         console.log(data);
       })

@@ -13,7 +13,19 @@
     <script src="/js/index.js"></script>
   </head>
   <body ng-app='MyApp'>
-    <h1><%= title %></h1>
-
+    <div class="container">
+      <h1><%= title %></h1>
+      <div ng-controller='mainCtrl'>
+        <h3>New Todo:</h3>
+        <div class="jumbotron">
+          <form ng-submit="addTodo()" class="form-inline">
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <input type="text" class="form-control input-lg text-center" placeholder='Wash the Car' ng-model='newTodo.description'>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
