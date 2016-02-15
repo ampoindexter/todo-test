@@ -25,7 +25,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
-app.use('/', require('./routes/todos'));
 
 // 404 handler
 app.use(function(req, res, next) {

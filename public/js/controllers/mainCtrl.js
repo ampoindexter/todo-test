@@ -4,6 +4,7 @@ var app = angular.module('MyApp');
 
 app.controller('mainCtrl', function($scope, $http) {
   $scope.newTodo = {};
+  $scope.keys = Object.keys;
 
   $http.get('/todos')
     .success(function(data) {
