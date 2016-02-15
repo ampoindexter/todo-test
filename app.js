@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/[ENTER_PROJECT
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded( {extended: true} ));
@@ -27,8 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/index'));
 
 // 404 handler
-app.get(function(req, res) {
-  res.status(404).render('404');
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  res.status(err.status || 500);
+  res.render('error', {
+    message: err.message,
+    error: err
+  });
 });
 
 app.listen(PORT, function(){
