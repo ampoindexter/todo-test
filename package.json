@@ -2,6 +2,10 @@
   "name": "todo-test",
   "version": "1.0.0",
   "description": "Quick MEAN stack Todo list",
+  "main": "app.js",
+  "authors": [
+    "Alicia Poindexter <alcampbel@gmail.com>"
+  ],
   "engines": {
     "node": "4.2.4"
   },
@@ -14,13 +18,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular-bootstrap": "^0.12.2",
     "body-parser": "^1.14.2",
     "bower": "^1.7.7",
     "cookie-parser": "^1.4.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
-    "jade": "^1.11.0",
     "kerberos": "0.0.18",
     "mongoose": "^4.3.7",
     "morgan": "^1.6.1",
