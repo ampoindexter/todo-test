@@ -27,8 +27,8 @@ app.controller('mainCtrl', function($scope, $http) {
       });
   };
 
-  $scope.deleteTodo = function(id) {
-    $http.delete('/todos/' + id)
+  $scope.deleteTodo = function(contact._id) {
+    $http.delete('/todos/' + contact._id)
       .success(function(data) {
         $scope.todos = data;
         console.log(data);
@@ -37,4 +37,9 @@ app.controller('mainCtrl', function($scope, $http) {
         console.log('Error: ', + data);
       });
   }
+
+  $scope.sortTodo = function(key) {
+    $scope.sortText = $scope.sortText === key ? ('-' + key) : key;
+  }
+  
 });

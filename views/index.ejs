@@ -35,11 +35,22 @@
           <thead>
             <tr>
               <th>#</th>
-              <th class="header" ng-repeat='(key, value) in todos[0]'>
+              <th class="sortHead" ng-repeat='(key, value) in todos[0]' ng-click='sortTodo(key)'>
                 {{key.toUpperCase()}}
+                <span class="fa fa-caret-square-o-down"></span>
               </th>
+              <th>Delete</th>
             </tr>
           </thead>
+          <tbody id="todoList">
+            <tr ng-repeat='(key, todo) in todos orderBy: sortText track by $index'>
+              <td>{{$index + 1}}</td>
+              <td ng-repeat='value in contact'>{{value}}</td>
+              <td class="delete" ng-click='deleteTodo(contact._id)'>
+                <span class="fa fa-trash-o fa-lg"></span>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
