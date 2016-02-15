@@ -24,6 +24,7 @@
     "angular-ui-router": "^0.2.18",
     "angular-ui-bootstrap": "^1.1.2",
     "ngstorage": "^0.3.10",
-    "bootswatch-dist": "cyborg"
+    "bootswatch-dist": "cyborg",
+    "font-awesome": "^4.5.0"
   }
 }
