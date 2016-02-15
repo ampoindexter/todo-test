@@ -19,7 +19,7 @@ router.post('/', function(req, res) {
 
 router.delete('/:todo_id', function(req, res) {
   Todo.findByIdAndRemove(req.params.todo_id, function(err, todo) {
-    res.status(err ? 400 : 200).send(err || todo)
+    res.status(err ? 400 : 200).send(err || 'todo deleted')
   });
 });
 
